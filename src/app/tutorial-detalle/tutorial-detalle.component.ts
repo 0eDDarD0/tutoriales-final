@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Tutorial } from '../tutorial';
 import { TutorialService } from '../tutorial.service';
 
@@ -12,8 +13,13 @@ export class TutorialDetalleComponent implements OnInit {
 
   tutorial: Tutorial;
 
+<<<<<<< HEAD
   constructor(private tutorialService: TutorialService) {
   
+=======
+  constructor(private tutorialService: TutorialService, private ruta: ActivatedRoute) {
+      this.tutorial = tutorialService.getTutorial(ruta.snapshot.paramMap.get('id'));
+>>>>>>> 610a3d82c9b83ae0aa67e3a2723e7544a176947e
   }
 
   ngOnInit(): void {
