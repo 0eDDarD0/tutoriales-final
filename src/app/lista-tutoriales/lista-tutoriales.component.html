@@ -1,1 +1,18 @@
-<p>lista-tutoriales works!</p>
+<!-- AÑADIR una imagen random -->
+
+<div class = "container"> 
+    <h2> Todos los tutoriales </h2>
+    <div class = "row">
+      <div class = "col-4" *ngFor="let tuto of tutoriales"> 
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="tuto.title">Título</h5>
+              <button type="button" class="btn btn-primary" [routerLink]="'tutorial/'+ tuto.id">Ver</button>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>    
+
+    

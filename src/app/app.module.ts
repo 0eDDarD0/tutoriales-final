@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ListaTutorialesComponent } from './lista-tutoriales/lista-tutoriales.component';
 import { TutorialDetalleComponent } from './tutorial-detalle/tutorial-detalle.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TutorialDetalleComponent } from './tutorial-detalle/tutorial-detalle.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgbModule,
     HttpClientModule
   ],
   providers: [],
