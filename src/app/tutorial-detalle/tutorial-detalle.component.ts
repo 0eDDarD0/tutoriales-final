@@ -14,7 +14,7 @@ export class TutorialDetalleComponent implements OnInit {
   tutorial: Tutorial;
 
   constructor(private tutorialService: TutorialService, private ruta: ActivatedRoute) {
-      this.tutorial = tutorialService.getTutorial(ruta.snapshot.paramMap.get('id'));
+      this.tutorial = tutorialService.getTutorial(Number(ruta.snapshot.paramMap.get('id'));
   }
 
   ngOnInit(): void {
