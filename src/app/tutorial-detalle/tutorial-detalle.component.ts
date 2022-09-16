@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Tutorial } from '../tutorial';
+import { TutorialService } from '../tutorial.service';
 
 @Component({
   selector: 'app-tutorial-detalle',
   templateUrl: './tutorial-detalle.component.html',
-  styleUrls: ['./tutorial-detalle.component.scss']
+  styleUrls: ['./tutorial-detalle.component.scss'],
+  providers: [TutorialService]
 })
 export class TutorialDetalleComponent implements OnInit {
 
-  constructor() { }
+  tutorial: Tutorial;
+
+  constructor(tutorialService: TutorialService) { this.tutorial = tutorialService.getTutorial();}
 
   ngOnInit(): void {
   }
