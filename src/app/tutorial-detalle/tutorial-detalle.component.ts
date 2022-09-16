@@ -24,6 +24,7 @@ export class TutorialDetalleComponent implements OnInit {
 
   actualizarTutorial(){
     this.tutorialService.putTutorial(this.tutorial);
+    location.reload();
   }
 
   eliminarTutorial(){
