@@ -6,26 +6,16 @@ import { Tutorial } from './tutorial';
   providedIn: 'root'
 })
 export class TutorialService {
-    endpoint: string = '192.168.1.160:8080/';
+    endpoint: string = 'http://192.168.1.160:8080/';
 
     constructor(private http: HttpClient){}
 
     getTutoriales(){
-        let tutoriales: Array<Tutorial> = [];
-        this.http.get<any>(this.endpoint + 'tutorials').subscribe(data=>{
-            tutoriales = data;
-        });
-
-        return tutoriales;
+        return this.http.get<any>(this.endpoint + 'tutorials');
     }
 
     getTutorial(id: number){
-        let tutorial: Tutorial = new Tutorial();
-        this.http.get<any>(this.endpoint + 'tutorials/' + id).subscribe(data=>{
-            tutorial = data;
-        });
-
-        return tutorial;
+        return this.http.get<any>(this.endpoint + 'tutorials/' + id);
     }
 
     postTutorial(tutorial: Tutorial){
