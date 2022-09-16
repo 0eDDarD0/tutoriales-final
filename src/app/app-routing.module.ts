@@ -4,7 +4,7 @@ import { ListaTutorialesComponent } from './lista-tutoriales/lista-tutoriales.co
 import { TutorialDetalleComponent } from './tutorial-detalle/tutorial-detalle.component';
 
 const routes: Routes = [
-    {path:"", component:ListaTutorialesComponent,},
+    {path:"", component:ListaTutorialesComponent},
     {path:"tutorial/:id", component:TutorialDetalleComponent}
 ];
 

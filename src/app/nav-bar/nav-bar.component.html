@@ -6,7 +6,31 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="d-flex justify-content-end" id="navbarSupportedContent">
-            <button type="success" class="btn btn-outline-light mx-3" routerLink="aula/crear">Crear tutorial</button>
+            <button type="button" class="btn btn-outline-light mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Crear tutorial
+            </button>
+            <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Introduzca los datos del tutorial que desea crear</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Título</h5>
+                        <input type="text" placeholder="Inserte título del tutorial" size = "50" [(ngModel)] = "tutorial.title"/><br><br>
+                        <h5>Descripción</h5>
+                        <input type="text" placeholder="Inserte descripción del tutorial" size="50" [(ngModel)] = "tutorial.description"/><br><br>
+                        <h5>Estado</h5>
+                        Publicado:  <input type="checkbox"  size="50" [(ngModel)] = "tutorial.published" /><br><br>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-dark" (click)="createTutorial()">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Introduce tutorial ID" aria-label="Search">
             <button class="btn btn-outline-light" type="submit">Buscar</button>
