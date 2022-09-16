@@ -11,6 +11,7 @@ import { R3BoundTarget } from '@angular/compiler';
 })
 export class NavBarComponent implements OnInit {
   tutorial: Tutorial = new Tutorial();
+  buscar: string = "";
 
   constructor(private tutorialService: TutorialService, ruta: ActivatedRoute) {}
 

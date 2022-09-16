@@ -31,10 +31,10 @@
                   </div>
                 </div>
               </div>
-            <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Introduce tutorial ID" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Buscar</button>
-            </form>
+            <div class="d-flex">
+            <input [(ngModel)]="buscar" class="form-control me-2" type="search" placeholder="Introduce tutorial ID" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit" [routerLink]="['/tutorial/' + buscar]">Buscar</button>
+            </div>
         </div>
         </div>
     </nav>
