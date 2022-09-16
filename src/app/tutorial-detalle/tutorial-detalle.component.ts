@@ -12,9 +12,13 @@ export class TutorialDetalleComponent implements OnInit {
 
   tutorial: Tutorial;
 
-  constructor(tutorialService: TutorialService) { this.tutorial = tutorialService.getTutorial();}
+  constructor(private tutorialService: TutorialService) { this.tutorial = tutorialService.getTutorial();}
 
   ngOnInit(): void {
+  }
+
+  actualizarTutorial(){
+    this.tutorialService.putTutorial(this.tutorial);
   }
 
 }
