@@ -1,0 +1,61 @@
+
+<div class = "container"> 
+    <div class = "row">
+        <div class="col-8">
+            <h2 class="my-3">{{tutorial.title}}</h2>
+        </div>
+        <div class="col-4">
+            <div *ngIf = "tutorial.published; else ElseBlock">
+                <p class="bg-success text-light m-3 p-3 rounded">Publicado</p>
+            </div>
+            <ng-template #ElseBlock>
+                <p class="bg-danger text-light m-3 p-3 rounded">No publicado</p>
+            </ng-template>
+        </div>
+    </div>
+    <div class = "row m-3">
+        <div class="row">
+            <b>Id: {{tutorial.id}}</b>
+        </div>
+        <div class="row">
+            <b>{{tutorial.description}}</b>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="col-sm">
+            <button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#updatemodal">Actualizar</button>
+
+            <div class="modal fade modal-xl" id="updatemodal" tabindex="-1" aria-labelledby="updatemodalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updatemodalLabel">Introduzca los cambios que desea realizar</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Título</h5>
+                        <input type="text" [(ngModel)]="tutorial.title" /><br><br>
+                        <h5>Descripción</h5>
+                        <input type="text" [(ngModel)]="tutorial.description" /><br><br>
+                        <h5>Estado</h5>
+                        <input type="checkbox" [(ngModel)]="tutorial.published" /><br><br>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-dark" (click)="actualizarTutorial()">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+            <button type="button" class="btn btn-danger" (click)="eliminarTutorial()" [routerLink]="['/']">Eliminar</button>
+        </div>
+        
+    </div>
+</div> 
