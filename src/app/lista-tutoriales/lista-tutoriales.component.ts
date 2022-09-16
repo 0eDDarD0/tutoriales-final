@@ -12,7 +12,11 @@ export class ListaTutorialesComponent implements OnInit {
   tutorials: Array<Tutorial> = [];
   tutorial: Tutorial = new Tutorial();
 
-  constructor(private tutorialService: TutorialService) { this.tutorials = tutorialService.getTutoriales();}
+    constructor(private tutorialService: TutorialService) {
+        tutorialService.getTutoriales().subscribe(data=>{
+            this.tutorials = data;
+        });
+    }
 
   ngOnInit(): void {
   }

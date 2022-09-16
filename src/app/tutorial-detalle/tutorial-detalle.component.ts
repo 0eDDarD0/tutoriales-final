@@ -11,10 +11,12 @@ import { TutorialService } from '../tutorial.service';
 })
 export class TutorialDetalleComponent implements OnInit {
 
-  tutorial: Tutorial;
+  tutorial: Tutorial = new Tutorial();
 
   constructor(private tutorialService: TutorialService, private ruta: ActivatedRoute) {
-      this.tutorial = tutorialService.getTutorial(Number(ruta.snapshot.paramMap.get('id')));
+      tutorialService.getTutorial(Number(ruta.snapshot.paramMap.get('id'))).subscribe(data=>{
+        this.tutorial = data;
+      });
   }
 
   ngOnInit(): void {
