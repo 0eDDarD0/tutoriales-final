@@ -13,7 +13,7 @@ export class TutorialDetalleComponent implements OnInit {
   tutorial: Tutorial;
 
   constructor(private tutorialService: TutorialService) {
-    this.tutorial = tutorialService.getTutorial(this.tutorial.id);
+  
   }
 
   ngOnInit(): void {
