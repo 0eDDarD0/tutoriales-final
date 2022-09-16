@@ -1,7 +1,65 @@
-<!-- AÑADIR el estado del tutorial (publicado o no publicado) -->
+<!-- Mejorar (publicado o no publicado), preguntar eliminacion -->
 
 <div class = "container"> 
     <div class = "row">
-      
+        <div class="col-8">
+            <h2>{{tutorial.title}}</h2>
+        </div>
+        <div class="col-4">
+            <div *ngIf = "tutorial.published; else ElseBlock">
+                <p>Publicado</p>
+            </div>
+            <ng-template #ElseBlock>
+                <p>No publicado</p>
+            </ng-template>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="col-sm">
+            <h5>Descripción: </h5> {{tutorial.description}}
+        </div>
+    </div>
+    <div class = "row">
+        <div class="col-sm">
+            <button type="button" class="btn btn-primary mx-2" (click)="actualizarTutorial()" data-bs-toggle="modal" data-bs-target="#updatemodal">Actualizar</button>
+
+            <div class="modal fade modal-xl" id="updatemodal" tabindex="-1" aria-labelledby="updatemodalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updatemodalLabel">Introduzca los cambios que desea realizar</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <h5>Título</h5>
+                        <input type="text" [(ngModel)]="tutorial.title" /><br><br>
+                      </form>
+                      <form>
+                        <h5>Descripción</h5>
+                        <input type="text" [(ngModel)]="tutorial.description" /><br><br>
+                      </form>
+                      <form>
+                        <h5>Estado</h5>
+                        <input type="text" [(ngModel)]="tutorial.published" /><br><br>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+            <button type="button" class="btn btn-primary" (click)="eliminarTutorial()" [routerLink]="['/']">Eliminar</button>
+        </div>
+        
     </div>
 </div> 

@@ -26,4 +26,7 @@ export class TutorialDetalleComponent implements OnInit {
     this.tutorialService.putTutorial(this.tutorial);
   }
 
+  eliminarTutorial(){
+    this.tutorialService.deleteTutorial(this.tutorial.id);
+  }
 }
