@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Tutorial } from '../classes/tutorial';
 
 @Injectable({
@@ -10,23 +11,23 @@ export class TutorialService {
 
     constructor(private http: HttpClient){}
 
-    getArrayTutorials(){
+    getTutorials(): Observable<Array<Tutorial>>{
         return this.http.get<any>(this.endpoint + 'tutorials');
     }
 
-    getTutorial(id: number){
+    getTutorial(id: number): Observable<Tutorial>{
         return this.http.get<any>(this.endpoint + 'tutorials/' + id);
     }
 
     createTutorial(tutorial: Tutorial){
-        this.http.post(this.endpoint + 'tutorials', tutorial).subscribe(data=>{});
+        this.http.post(this.endpoint + 'tutorials', tutorial).subscribe();
     }
 
     modifyTutorial(tutorial: Tutorial){
-        this.http.put(this.endpoint + 'tutorials/' + tutorial.id, tutorial).subscribe(data=>{});
+        this.http.put(this.endpoint + 'tutorials/' + tutorial.id, tutorial).subscribe();
     }
 
     deleteTutorial(id: number){
-        this.http.delete(this.endpoint + 'tutorials/' + id).subscribe(data=>{});
+        this.http.delete(this.endpoint + 'tutorials/' + id).subscribe();
     }
 }

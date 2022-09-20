@@ -9,11 +9,11 @@ import { TutorialService } from '../services/tutorial.service';
 })
 export class ListaTutorialesComponent implements OnInit {
 
-  tutorialsList: Array<Tutorial> = [];
+  tutorials: Array<Tutorial> = [];
 
     constructor(private tutorialService: TutorialService) {
-        tutorialService.getArrayTutorials().subscribe(tutorialsListResponse=>{
-            this.tutorialsList = tutorialsListResponse;
+        tutorialService.getTutorials().subscribe(tutorialsResponse=>{
+            this.tutorials = tutorialsResponse;
         });
     }
 

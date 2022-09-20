@@ -18,15 +18,15 @@
                     </div>
                     <div class="modal-body">
                         <h5>Título</h5>
-                        <input type="text" placeholder="Inserte título del tutorial" size = "50" [(ngModel)] = "tutorialToCreate.title"/><br><br>
+                        <input type="text" placeholder="Inserte título del tutorial" size = "50" [(ngModel)] = "newTutorial.title"/><br><br>
                         <h5>Descripción</h5>
-                        <input type="text" placeholder="Inserte descripción del tutorial" size="50" [(ngModel)] = "tutorialToCreate.description"/><br><br>
+                        <input type="text" placeholder="Inserte descripción del tutorial" size="50" [(ngModel)] = "newTutorial.description"/><br><br>
                         <h5>Estado</h5>
-                        Publicado:  <input type="checkbox"  size="50" [(ngModel)] = "tutorialToCreate.published" /><br><br>
+                        Publicado:  <input type="checkbox"  size="50" [(ngModel)] = "newTutorial.published" /><br><br>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                      <button type="button" class="btn btn-dark" (click)="sendCreateTutorial()">Guardar cambios</button>
+                      <button type="button" class="btn btn-dark" (click)="createTutorial()">Guardar cambios</button>
                     </div>
                   </div>
                 </div>
