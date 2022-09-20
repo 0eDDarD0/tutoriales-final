@@ -1,4 +1,4 @@
-import { Tutorial } from './tutorial';
+import { Tutorial } from '../classes/tutorial';
 
 describe('Tutorial', () => {
   it('should create an instance', () => {

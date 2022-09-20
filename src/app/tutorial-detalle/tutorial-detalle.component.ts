@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Tutorial } from '../tutorial';
-import { TutorialService } from '../tutorial.service';
+import { Tutorial } from '../classes/tutorial';
+import { TutorialService } from '../services/tutorial.service';
 
 @Component({
   selector: 'app-tutorial-detalle',
@@ -11,23 +11,23 @@ import { TutorialService } from '../tutorial.service';
 })
 export class TutorialDetalleComponent implements OnInit {
 
-  tutorial: Tutorial = new Tutorial();
+  tutorialToShow: Tutorial = new Tutorial();
 
-  constructor(private tutorialService: TutorialService, private ruta: ActivatedRoute) {
-      tutorialService.getTutorial(Number(ruta.snapshot.paramMap.get('id'))).subscribe(data=>{
-        this.tutorial = data;
+  constructor(private tutorialService: TutorialService, private urlRoute: ActivatedRoute) {
+      tutorialService.getTutorial(Number(urlRoute.snapshot.paramMap.get('id'))).subscribe(tutorialResponse=>{
+        this.tutorialToShow = tutorialResponse;
       });
   }
 
   ngOnInit(): void {
   }
 
-  actualizarTutorial(){
-    this.tutorialService.putTutorial(this.tutorial);
+  sendModifyTutorial(){
+    this.tutorialService.modifyTutorial(this.tutorialToShow);
     location.reload();
   }
 
-  eliminarTutorial(){
-    this.tutorialService.deleteTutorial(this.tutorial.id);
+  confirmDeleteTutorial(){
+    this.tutorialService.deleteTutorial(this.tutorialToShow.id);
   }
 }

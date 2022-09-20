@@ -18,22 +18,22 @@
                     </div>
                     <div class="modal-body">
                         <h5>Título</h5>
-                        <input type="text" placeholder="Inserte título del tutorial" size = "50" [(ngModel)] = "tutorial.title"/><br><br>
+                        <input type="text" placeholder="Inserte título del tutorial" size = "50" [(ngModel)] = "tutorialToCreate.title"/><br><br>
                         <h5>Descripción</h5>
-                        <input type="text" placeholder="Inserte descripción del tutorial" size="50" [(ngModel)] = "tutorial.description"/><br><br>
+                        <input type="text" placeholder="Inserte descripción del tutorial" size="50" [(ngModel)] = "tutorialToCreate.description"/><br><br>
                         <h5>Estado</h5>
-                        Publicado:  <input type="checkbox"  size="50" [(ngModel)] = "tutorial.published" /><br><br>
+                        Publicado:  <input type="checkbox"  size="50" [(ngModel)] = "tutorialToCreate.published" /><br><br>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                      <button type="button" class="btn btn-dark" (click)="createTutorial()">Guardar cambios</button>
+                      <button type="button" class="btn btn-dark" (click)="sendCreateTutorial()">Guardar cambios</button>
                     </div>
                   </div>
                 </div>
               </div>
             <div class="d-flex">
-            <input [(ngModel)]="buscar" class="form-control me-2" type="search" placeholder="Introduce tutorial ID" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit" [routerLink]="['/tutorial/' + buscar]">Buscar</button>
+            <input [(ngModel)]="idToSearch" class="form-control me-2" type="search" placeholder="Introduce tutorial ID" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit" [routerLink]="['/tutorial/' + idToSearch]">Buscar</button>
             </div>
         </div>
         </div>

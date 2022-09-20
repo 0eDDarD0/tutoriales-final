@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Tutorial } from '../tutorial';
-import { TutorialService } from '../tutorial.service';
+import { Tutorial } from '../classes/tutorial';
+import { TutorialService } from '../services/tutorial.service';
 import { ActivatedRoute } from '@angular/router';
-import { R3BoundTarget } from '@angular/compiler';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,16 +9,16 @@ import { R3BoundTarget } from '@angular/compiler';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  tutorial: Tutorial = new Tutorial();
-  buscar: string = "";
+  tutorialToCreate: Tutorial = new Tutorial();
+  idToSearch: string = "";
 
-  constructor(private tutorialService: TutorialService, ruta: ActivatedRoute) {}
+  constructor(private tutorialService: TutorialService, urlRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
   }
   
-  createTutorial(){
-    this.tutorialService.postTutorial(this.tutorial);
+  sendCreateTutorial(){
+    this.tutorialService.createTutorial(this.tutorialToCreate);
     location.reload();
   }
 }

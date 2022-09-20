@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Tutorial } from './tutorial';
+import { Tutorial } from '../classes/tutorial';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class TutorialService {
 
     constructor(private http: HttpClient){}
 
-    getTutoriales(){
+    getArrayTutorials(){
         return this.http.get<any>(this.endpoint + 'tutorials');
     }
 
@@ -18,11 +18,11 @@ export class TutorialService {
         return this.http.get<any>(this.endpoint + 'tutorials/' + id);
     }
 
-    postTutorial(tutorial: Tutorial){
+    createTutorial(tutorial: Tutorial){
         this.http.post(this.endpoint + 'tutorials', tutorial).subscribe(data=>{});
     }
 
-    putTutorial(tutorial: Tutorial){
+    modifyTutorial(tutorial: Tutorial){
         this.http.put(this.endpoint + 'tutorials/' + tutorial.id, tutorial).subscribe(data=>{});
     }
 
