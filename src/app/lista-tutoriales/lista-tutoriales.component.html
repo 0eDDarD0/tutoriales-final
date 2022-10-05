@@ -3,12 +3,12 @@
 <div class = "container"> 
     <h2 class="mt-3">Tutoriales</h2>
     <div class = "row">
-      <div class = "carta col-4 my-3" *ngFor="let tuto of tutorials"> 
+      <div class = "carta col-4 my-3" *ngFor="let tutorial of tutorials"> 
         <div class="card" style="width: 18rem;">
             <img src="https://picsum.photos/250/150" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="tuto.title">{{tuto.title}}</h5>
-              <button type="button" class="btn btn-dark" [routerLink]="['tutorial/'+ tuto.id]">Ver Detalles</button>
+              <h5 class="tuto.title">{{tutorial.title}}</h5>
+              <button type="button" class="btn btn-dark" [routerLink]="['tutorial/'+ tutorial.id]">Ver Detalles</button>
             </div>
         </div>
       </div>
