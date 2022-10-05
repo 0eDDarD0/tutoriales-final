@@ -7,7 +7,7 @@ import { Tutorial } from '../classes/tutorial';
   providedIn: 'root'
 })
 export class TutorialService {
-    endpoint: string = 'http://192.168.1.160:8080/';
+    endpoint: string = 'https://crud-ferlr.herokuapp.com/';
 
     constructor(private http: HttpClient){}
 
